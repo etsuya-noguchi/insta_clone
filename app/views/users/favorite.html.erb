@@ -1,0 +1,6 @@
+<P>お気に入り一覧</P>
+
+<% @favorite_blogs.each do |favorite_blog| %>
+  <%= favorite_blog.title %>
+  <%= favorite_blog.content %>
+<% end %>

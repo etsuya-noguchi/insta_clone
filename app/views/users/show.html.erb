@@ -1,0 +1,6 @@
+<h1><%= @user.name %>のページ</h1>
+<p>メールアドレス: <%= @user.email %></p>
+<% if logged_in? %>
+  <%= link_to 'ブログ一覧', blogs_path %>
+  <%= link_to 'お気に入り一覧', users_favorite_path %>
+<% end %>
