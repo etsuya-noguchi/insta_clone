@@ -10,3 +10,16 @@
 <% end %>
 
 <%= link_to "ブログ一覧画面にもどる", blogs_path %>
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @blog.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>

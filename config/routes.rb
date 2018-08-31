@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+ root 'top#index'
  root to: "blogs#index"
  get 'users/favorite', to: 'users#favorite'
  resources :favorites, only: [:create, :destroy]
