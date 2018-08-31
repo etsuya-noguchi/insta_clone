@@ -1,3 +1,5 @@
+<div class="container">
+  <%= image_tag 'insta.jpeg' %>
 <h1>Sign up</h1>
 <% if @user.errors.any? %>
  <div id="error_explanation">
@@ -9,17 +11,32 @@
    </ul>
  </div>
 <% end %>
-<%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :photo %>
-  <%= f.file_field :icon %>
-  <%= f.hidden_field :icon_cache %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Create my account" %>
+
+  <div class="row">
+  <%= form_with(model: @user, local: true) do |f| %>
+  <div class="col-sm-12 signup">
+    <div class="flex_container">
+      <div class="signup_image">
+        <!-- <img src="images.png"> -->
+      <%= image_tag 'images.png' %>
+      <div/>
+
+    <ul class="signup_ul">
+       <li><%= f.label :name %>
+       <%= f.text_field :name %></li>
+       <li><%= f.label :email %>
+       <%= f.email_field :email %></li>
+       <li><%= f.label :photo %>
+       <%= f.file_field :icon %>
+       <%= f.hidden_field :icon_cache %></li>
+       <li><%= f.label :password %>
+       <%= f.password_field :password %></li>
+       <li><%= f.label :password_confirmation %>
+       <%= f.password_field :password_confirmation %></li>
+       <li><%= f.submit "Create my account" %></li>
+    </ul>
+    <div/>
+  <div/>
 <% end %>
+<div/>
+<div/>
