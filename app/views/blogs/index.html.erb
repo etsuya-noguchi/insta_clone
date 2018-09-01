@@ -1,5 +1,9 @@
+<p class="text-center">
 <%= image_tag 'instag.png' %>
-<h1>ブログ一覧</h1>
+</p>
+<div class="center-block">
+<div><h1>ブログ一覧</h1></div>
+
 <p><%= notice %></p>
 <table>
   <tr>
@@ -13,12 +17,12 @@
     <td><%= blog.title %></td>
     <td><%= blog.content %></td>
     <td><%= blog.user.name %></td>
-          <td><%= link_to '確認する', blog_path(blog.id) %></td>
+          <td><%= link_to '確認する', blog_path(blog.id), class: 'btn btn-default'  %></td>
         <% if logged_in? %>
 
           <% if blog.user_id == current_user.id %>
-            <td><%= link_to "編集する", edit_blog_path(blog.id) %></td>
-            <td><%= link_to '削除する', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+            <td><%= link_to "編集する", edit_blog_path(blog.id), class: 'btn btn-default' %></td>
+            <td><%= link_to '削除する', blog_path(blog.id), class: 'btn btn-default', method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
           <% end %>
         <% end %>
   </tr>
@@ -27,4 +31,5 @@
 
 <br>
 
-<%= link_to '新しくブログを投稿する', new_blog_path %>
+<%= link_to '新しくブログを投稿する', new_blog_path, class: 'btn btn-default' %>
+</div>

@@ -64,7 +64,7 @@ class BlogsController < ApplicationController
   end
 
   def set_user
-    redirect_to  blogs_path unless current_user.id == blog.user_id
+    redirect_to  blogs_path unless current_user.id == @blog.user_id
 
   end
 end
