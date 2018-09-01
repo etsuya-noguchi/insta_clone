@@ -1,15 +1,18 @@
+<%= image_tag 'instag.png' %>
 <h1>ブログ一覧</h1>
 <p><%= notice %></p>
 <table>
   <tr>
     <th>タイトル</th>
     <th>内容</th>
+    <th>投稿者</th>
   </tr>
 
 <% @blogs.each do |blog| %>
   <tr>
     <td><%= blog.title %></td>
     <td><%= blog.content %></td>
+    <td><%= blog.user.name%></td>
           <td><%= link_to '確認する', blog_path(blog.id) %></td>
         <% if logged_in? %>
 
